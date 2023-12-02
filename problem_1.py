@@ -19,8 +19,7 @@ def sequencesLength(dp, lcs):
                 return i+j
 
 # Input
-n = input()
-m = input()
+n, m = input(), input()
 
 dp, lcs = LCS(n,m)
 totalLength = sequencesLength(dp, lcs)
@@ -28,4 +27,3 @@ totalLength = sequencesLength(dp, lcs)
 # Output
 for i in [lcs,totalLength]:
     print(i)
-
