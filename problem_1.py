@@ -1,6 +1,6 @@
-def LCS(n,m):
-    seq1=len(n)
-    seq2=len(m)
+def LCS(n, m):
+    seq1 = len(n)
+    seq2 = len(m)
     dp = [[0]*(seq2+1) for _ in range(seq1+1)]
 
     for i in range(seq1):
@@ -12,18 +12,20 @@ def LCS(n,m):
 
     return dp, dp[seq1][seq2]
 
+
 def sequencesLength(dp, lcs):
     for i in range(len(dp)):
         for j in range(len(dp[0])):
-            if dp[i][j]==lcs:
+            if dp[i][j] == lcs:
                 return i+j
+
 
 # Input
 n, m = input(), input()
 
-dp, lcs = LCS(n,m)
+dp, lcs = LCS(n, m)
 totalLength = sequencesLength(dp, lcs)
 
 # Output
-for i in [lcs,totalLength]:
+for i in [lcs, totalLength]:
     print(i)

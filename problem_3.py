@@ -1,8 +1,8 @@
 def bellmanFord(n, weightedEdges):
     inf = float('inf')
     dist = [inf] * (n + 1)
-    
-    dist[1] = 0 # Source as vertex 1
+
+    dist[1] = 0  # Source as vertex 1
 
     # Relaxation
     for i in range(n - 1):
@@ -11,6 +11,7 @@ def bellmanFord(n, weightedEdges):
                 dist[v] = dist[u] + w
 
     return "INFINITY" if dist[n] == inf else dist[n]
+
 
 # Input
 n, m = map(int, input().split())
