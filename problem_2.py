@@ -6,14 +6,13 @@ def kruskal(n, k, weightedEdges):
         return par[u]
 
     def unionSets(u, v, par, depth):
-        rootU = findSet(u, par)
-        rootV = findSet(v, par)
+        rootU, rootV = findSet(u, par), findSet(v, par)
 
         if rootU != rootV:
-            if depth[rootU] < depth[rootV]:
-                par[rootU] = rootV
-            elif depth[rootU] > depth[rootV]:
+            if depth[rootU] > depth[rootV]:
                 par[rootV] = rootU
+            elif depth[rootU] < depth[rootV]:
+                par[rootU] = rootV
             else:
                 par[rootU] = rootV
                 depth[rootV] += 1
