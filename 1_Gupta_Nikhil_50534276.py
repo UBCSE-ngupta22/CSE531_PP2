@@ -14,10 +14,12 @@ def LCS(n, m):
 
 
 def sequencesLength(dp, lcs):
+    minimumVal = []
     for i in range(len(dp)):
         for j in range(len(dp[0])):
             if dp[i][j] == lcs:
-                return i+j
+                minimumVal.append(i+j)
+    return min(minimumVal)
 
 
 # Input
